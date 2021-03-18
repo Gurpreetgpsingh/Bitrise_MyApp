@@ -3,9 +3,10 @@ import {Text, View, TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Style from './style';
 import {goBack} from '../../../navigation/NavigationService';
-
+import crashlytics from '@react-native-firebase/crashlytics';
 class SignUp extends React.PureComponent {
   onCrossPress = () => {
+    crashlytics().crash();
     goBack();
   };
   render() {
